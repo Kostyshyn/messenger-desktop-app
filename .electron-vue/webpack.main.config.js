@@ -1,6 +1,7 @@
 'use strict'
 
 process.env.BABEL_ENV = 'main'
+require('dotenv').config()
 
 const path = require('path')
 const { dependencies } = require('../package.json')

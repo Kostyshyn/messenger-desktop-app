@@ -1,15 +1,25 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+	<div id="app">
+		<MainFrame />
+	</div>
 </template>
 
 <script>
-  export default {
-    name: 'messenger-desktop-app'
-  }
+
+	import MainFrame from '@/components/MainFrame'
+
+	export default {
+		name: 'messenger-desktop-app',
+		components: { MainFrame },
+		methods: {
+
+		},
+		created(){
+
+		}
+	}
 </script>
 
-<style>
-  /* CSS */
+<style lang="sass">
+
 </style>
