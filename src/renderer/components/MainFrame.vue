@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <h1>User: {{ user }}</h1>
+    <h1>User: {{ user.username }}</h1>
     <router-view></router-view>
   </div>
 </template>
@@ -22,10 +22,7 @@
 
     },
     created(){
-      console.log('created', this.$store.state.User.user, this.user)
-      this.$nextTick(() => {
-        this.$store.dispatch('setUser', 'hello');
-      });
+
     }
   }
 </script>

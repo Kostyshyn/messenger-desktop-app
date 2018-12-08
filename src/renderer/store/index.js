@@ -13,19 +13,5 @@ export default new Vuex.Store({
     createPersistedState(),
     createSharedMutations()
   ],
-  state: {
-  	user: 2
-  },
-  mutations: {
-  	  SET_USER(state, user){
-	    state.user = user;
-	  }
-  },
-  actions: {
-	  setUser({ state, commit }, user) {
-	    console.log('user action', user)
-	    commit('SET_USER', user)
-	  }
-  },
   strict: process.env.NODE_ENV !== 'production'
 })

@@ -1,5 +1,5 @@
 const state = {
-  user: 1
+  user: 'Kos'
 }
 
 const mutations = {
@@ -16,13 +16,12 @@ const mutations = {
 
 const actions = {
   setUser({ state, commit, rootState }, user) {
-    console.log('user module action', user)
     commit('SET_USER', user)
   }
 }
 
 export default {
-  // namespaced: true,
+   namespaced: true,
   state,
   mutations,
   actions
