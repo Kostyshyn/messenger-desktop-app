@@ -1,5 +1,5 @@
 const state = {
-  user: 'Kos'
+  user: ''
 }
 
 const mutations = {
@@ -21,7 +21,7 @@ const actions = {
 }
 
 export default {
-   namespaced: true,
+  namespaced: true,
   state,
   mutations,
   actions

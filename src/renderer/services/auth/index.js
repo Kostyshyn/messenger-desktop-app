@@ -2,7 +2,6 @@ import { Api } from '../api.js'
 
 export default {
 	login(context, credentials){
-		console.log(credentials);
 		Api.post('login', credentials).then(res => {
 			context.$store.dispatch('User/setUser', res.data.user);
 			console.log(res.data.user)
@@ -12,8 +11,14 @@ export default {
 		});
 
 	},
-	register(context){
-
+	register(context, credentials){
+		Api.post('register', credentials).then(res => {
+			context.$store.dispatch('User/setUser', res.data.user);
+			console.log(res.data.user)
+		}).catch(err => {
+			console.log(err.response.data);
+			context.errors = err.response.data.errors;
+		});
 	},
 	logout(context){
 
