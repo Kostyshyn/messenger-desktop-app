@@ -1,6 +1,6 @@
 <template>
     <div id="top-navigation">
-        User: {{ user.username }}
+        <span v-if="user">User: {{ user.username }}</span>
     </div>
 </template>
 
