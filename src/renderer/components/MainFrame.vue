@@ -1,22 +1,25 @@
 <template>
-  <div id="wrapper">
-    <h1>User: {{ user.username }}</h1>
-    <router-view></router-view>
-  </div>
+    <div id="main-frame">
+        <TopNavigation />
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
 
-  import { mapState } from 'vuex'
+import { mapState } from 'vuex';
+import TopNavigation from './navigation/TopNavigation.vue';
 
-  export default {
+export default {
     name: 'MainFrame',
-    components: {  },
+    components: { 
+        TopNavigation
+    },
     computed: {
-      localComputed () { /* ... */ },
-      ...mapState({
-        user: state => state.User.user
-      })
+        localComputed () { /* ... */ },
+        ...mapState({
+            
+        })
     },
     methods: {
 
@@ -24,11 +27,10 @@
     created(){
 
     }
-  }
+}
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
- 
+
 </style>
