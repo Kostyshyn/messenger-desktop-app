@@ -20,6 +20,6 @@
 	}
 </script>
 
-<style lang="sass">
-
+<style lang="scss">
+	@import './assets/scss/app';
 </style>
