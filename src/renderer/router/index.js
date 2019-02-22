@@ -6,12 +6,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/login',
+      path: '/',
       name: 'Login',
       component: require('@/components/auth/Login').default
     },
     {
-      path: '/',
+      path: '/register',
       name: 'Register',
       component: require('@/components/auth/Register').default
     },

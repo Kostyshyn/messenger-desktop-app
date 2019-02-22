@@ -1,6 +1,6 @@
 const state = {
-  user: ''
-}
+  user: null
+};
 
 const mutations = {
   SET_USER(state, user){
@@ -12,17 +12,24 @@ const mutations = {
   //   state.user = payload.user;
   //   state.isUserLoggedIn = true;
   // },
-}
+};
 
 const actions = {
-  setUser({ state, commit, rootState }, user) {
-    commit('SET_USER', user)
+  setUser({ state, commit, rootState }, user){
+    commit('SET_USER', user);
   }
 }
+
+const getters = {
+  getUser(state){
+    return state.user;
+  }
+};
 
 export default {
   namespaced: true,
   state,
   mutations,
-  actions
+  actions,
+  getters
 }

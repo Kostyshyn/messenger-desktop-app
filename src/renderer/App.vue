@@ -15,7 +15,7 @@
 
 		},
 		created(){
-
+			this.$store.dispatch('User/setUser', null);
 		}
 	}
 </script>

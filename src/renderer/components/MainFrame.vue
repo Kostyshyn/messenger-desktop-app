@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <h1>User: {{ user.username }}</h1>
+    <h1 v-if="user">User: {{ user.username }}</h1>
     <router-view></router-view>
   </div>
 </template>
