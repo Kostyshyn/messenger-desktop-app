@@ -12,7 +12,7 @@ export default {
     name: 'TopNavigation',
     components: {  },
     computed: {
-        localComputed () { /* ... */ },
+        localComputed(){ /* ... */ },
         ...mapState({
             user: state => state.User.user
         })
