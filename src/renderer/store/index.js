@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 import { createPersistedState, createSharedMutations } from 'vuex-electron'
 
-import modules from './modules'
+import User from './modules/User';
 
 Vue.use(Vuex)
 
@@ -11,7 +11,9 @@ export default new Vuex.Store({
 	state: {
 		BASE_URL: process.env.VUE_APP_BASE_URL
 	},
-  	modules,
+  	modules: {
+  		User
+  	},
   	plugins: [
     	createPersistedState(),
     	createSharedMutations()
