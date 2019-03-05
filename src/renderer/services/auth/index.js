@@ -7,9 +7,7 @@ export default {
 			Api.post('login', credentials).then(res => {
 				context.$store.dispatch('User/setUser', res.data.user);
 				const socket = getConnection(res.data.token);
-				console.log(res.data.user, socket)
 			}).catch(err => {
-				console.log(err.response.data);
 				context.errors = err.response.data.errors;
 			});
 		} else {
@@ -21,9 +19,7 @@ export default {
 	register(context, credentials){
 		Api.post('register', credentials).then(res => {
 			context.$store.dispatch('User/setUser', res.data.user);
-			console.log(res.data.user)
 		}).catch(err => {
-			console.log(err.response.data);
 			context.errors = err.response.data.errors;
 		});
 	},

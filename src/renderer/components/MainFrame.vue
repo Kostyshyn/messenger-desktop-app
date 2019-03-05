@@ -16,7 +16,7 @@ export default {
         TopNavigation
     },
     computed: {
-        localComputed () { /* ... */ },
+        localComputed(){ /* ... */ },
         ...mapState({
             
         })

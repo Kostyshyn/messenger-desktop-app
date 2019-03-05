@@ -27,8 +27,6 @@ body {
 	background-color: $white-background-color;
 }
 
-@import "partials/top-navigation";
-
 // headings
 
 .heading {
@@ -43,6 +41,13 @@ body {
 
 // text
 
+.link {
+	font-size: 14px;
+	color: $blue-font-color;
+	cursor: pointer;
+	display: inline-block;
+}
+
 // inputs
 
 .input {
@@ -56,11 +61,23 @@ body {
 	outline: none;
 	box-sizing: border-box;
 	transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+	width: 100%;
 	&:focus, &:active {
 		outline: none;
 		background-color: transparent;
 		border: 1px solid $grey-color;
 	}
+	&.error {
+		outline: none;
+		background-color: transparent;
+		border: 1px solid $red-font-color;
+		color: $red-font-color;
+	}
+}
+.validation-errors {
+	color: $red-font-color;
+	list-style-type: none;
+	margin: 10px 0px -10px 0px;
 }
 
 // buttons
@@ -102,6 +119,13 @@ button, html [type="button"], [type="reset"], [type="submit"] {
 
 // effects 
 
+.fade-validation-enter-active, .fade-validation-leave-active {
+
+}
+.fade-validation-enter, .fade-validation-leave-to {
+
+}
+
 .ripple {
 	position: relative;
 	overflow: hidden;
@@ -127,5 +151,21 @@ button, html [type="button"], [type="reset"], [type="submit"] {
 		transform: scale(0,0);
 		opacity: .2;
 		transition: 0s;
+	}
+}
+
+// dispaly 
+
+.d-flex {
+	display: flex;
+	&.pos-yc-xc {
+		align-items: center;
+		justify-content: center;
+	}
+	&.pos-yc {
+		align-items: center;
+	}
+	&.pos-xc {
+		justify-content: center;
 	}
 }

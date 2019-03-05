@@ -8,10 +8,13 @@ import modules from './modules'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules,
-  plugins: [
-    createPersistedState(),
-    createSharedMutations()
-  ],
-  strict: process.env.NODE_ENV !== 'production'
+	state: {
+		BASE_URL: process.env.VUE_APP_BASE_URL
+	},
+  	modules,
+  	plugins: [
+    	createPersistedState(),
+    	createSharedMutations()
+  	],
+  	strict: process.env.NODE_ENV !== 'production'
 })

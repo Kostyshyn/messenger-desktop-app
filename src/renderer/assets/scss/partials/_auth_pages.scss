@@ -1,0 +1,18 @@
+#login-page, #register-page	{
+	width: 100%;
+	height: calc(100vh - 58px);
+	.login-form,
+	.register-form {
+		padding-top: 70px;
+		width: 300px;
+		margin: 0 auto;
+		.heading {
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		.submit {
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+}

@@ -12,7 +12,7 @@ export default {
     name: 'Chat',
     components: {  },
     computed: {
-        localComputed () { /* ... */ },
+        localComputed(){ /* ... */ },
         ...mapState({
             user: state => state.User.user
         })
