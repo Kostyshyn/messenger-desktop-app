@@ -3,15 +3,15 @@
 
         <div v-if="user">
             <span>User: {{ user.username }}</span>
-            <img :src="BASE_URL + '/' + user.profile_img" alt="">            
+            <span class="link" @click="LOGOUT">Logout</span>
+            <!-- <img :src="BASE_URL + '/' + user.profile_img" alt="">             -->
         </div>
-
     </div>
 </template>
 
 <script>
 
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
     name: 'TopNavigation',
@@ -26,6 +26,7 @@ export default {
         })
     },
     methods: {
+        ...mapActions('User', ['LOGOUT']),
 
     },
     created(){

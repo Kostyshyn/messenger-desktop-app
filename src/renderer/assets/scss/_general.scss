@@ -46,6 +46,7 @@ body {
 	color: $blue-font-color;
 	cursor: pointer;
 	display: inline-block;
+	text-decoration: none;
 }
 
 // inputs
@@ -118,6 +119,14 @@ button, html [type="button"], [type="reset"], [type="submit"] {
 }
 
 // effects 
+
+.page-enter-active, .page-leave-active {
+  	transition: 0.2s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+.page-enter, .page-leave-to {
+  	opacity: 0;
+  	// transform: translateY(-20px);
+}
 
 .fade-validation-enter-active, .fade-validation-leave-active {
 

@@ -1,6 +1,6 @@
 <template>
-    <div id="chat-wrapper">
-       chat
+    <div id="chat-wrapper" class="d-flex pos-yc-xc">
+       <h1 class="heading h-1">Messages</h1>
     </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     computed: {
         localComputed(){ /* ... */ },
         ...mapState({
-            user: state => state.User.user
+            
         })
     },
     methods: {
@@ -27,6 +27,10 @@ export default {
 </script>
 
 <style>
-
+    
+    #chat-wrapper {
+        width: 100%;
+        height: calc(100vh - 58px);
+    }
 
 </style>

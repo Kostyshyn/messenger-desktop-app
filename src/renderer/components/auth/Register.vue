@@ -12,6 +12,10 @@
 				<button @click="register" class="button primary ripple submit">Register</button>
 			</div>		
 
+			<div class="to-login">
+				Already have an account?<router-link class="link" :to="{ name: 'Login' }">Sign in</router-link>
+			</div>		
+
 		</div>
 
 	</div>
@@ -22,7 +26,7 @@
 	import LoginInput from './partials/LoginInput.vue';
 	import EmailInput from './partials/EmailInput.vue';
 	import PasswordInput from './partials/PasswordInput.vue';
-	import AuthServices from '@/services/auth';
+	import { mapActions } from 'vuex';
 
 	export default {
 		name: 'Register',
@@ -41,12 +45,19 @@
 		},
 		computed: {},
 		methods: {
+			...mapActions('User', ['REGISTER']),
 			register(){
 				this.errors = [];
-				AuthServices.register(this, {
+				this['REGISTER']({
 					username: this.username,
 					email: this.email,
 					password: this.password
+				}).then(user => {
+
+					console.log(user);
+
+				}).catch(errors => {
+					this.errors = errors;
 				});
 			},			
 			getErrors(param){

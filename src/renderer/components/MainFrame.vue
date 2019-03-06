@@ -1,7 +1,10 @@
 <template>
     <div id="main-frame">
         <TopNavigation />
-        <router-view></router-view>
+
+        <!-- <transition name="page" mode="out-in"> -->
+            <router-view></router-view>
+        <!-- </transition> -->
     </div>
 </template>
 

@@ -9,6 +9,10 @@
 
 			<div class="d-flex pos-xc">
 				<button @click="login" class="button primary ripple submit">Login</button>
+			</div>
+
+			<div class="to-register">
+				No account?<router-link class="link" :to="{ name: 'Register' }">Create one</router-link>
 			</div>		
 
 		</div>
@@ -20,7 +24,7 @@
 
 	import LoginInput from './partials/LoginInput.vue';
 	import PasswordInput from './partials/PasswordInput.vue';
-	import AuthServices from '@/services/auth';
+	import { mapActions } from 'vuex';
 
 	export default {
 		name: 'Login',
@@ -37,11 +41,18 @@
 		},
 		computed: {},
 		methods: {
+			...mapActions('User', ['LOGIN']),
 			login(){
 				this.errors = [];
-				AuthServices.login(this, {
+				this['LOGIN']({
 					username: this.username,
 					password: this.password
+				}).then(user => {
+
+					console.log(user);
+
+				}).catch(errors => {
+					this.errors = errors;
 				});
 			},
 			getErrors(param){

@@ -6,3 +6,14 @@ export const Api = axios.create({
     	Authorization: 'Bearer {token}'
   	}
 });
+
+Api.interceptors.response.use(undefined, (err) => {
+	// if (error.response && error.response.status === 401){
+
+	// }
+	if (err.message === 'Network Error'){
+		console.log('Netvork unvaliable')
+	} else {
+		return Promise.reject(err);
+	}
+});

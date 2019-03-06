@@ -10,7 +10,7 @@ const getConnection = function(token){
 			token: token
 		}).on('authenticated', () => {
 
-			console.log('authenticated');
+			console.log('authenticated', socket.id);
 
 		// already authenticated
 
