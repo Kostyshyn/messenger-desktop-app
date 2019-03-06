@@ -1,6 +1,6 @@
 <template>
-    <div id="chat">
-       <h1 class="heading h-1">Chat</h1>
+    <div id="sidebar-wrapper">
+       <h1 class="heading h-1">Sidebar</h1>
     </div>
 </template>
 

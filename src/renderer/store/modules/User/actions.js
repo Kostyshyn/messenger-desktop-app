@@ -11,7 +11,7 @@ export default {
 		    		const socket = getConnection(token);
 		    		commit('SET_USER', user);
 		    		commit('SET_AUTH_TOKEN', token);
-		    		router.push({ name: 'Chat' })
+		    		router.push({ name: 'ChatWrapper' });
 		    		resolve(user);
 		    	}).catch(err => {
 		    		let { errors } = err.response.data;
@@ -32,7 +32,7 @@ export default {
 		    		const socket = getConnection(token);
 		    		commit('SET_USER', user);
 		    		commit('SET_AUTH_TOKEN', token);
-		    		router.push({ name: 'Chat' })
+		    		router.push({ name: 'ChatWrapper' })
 		    		resolve(user);
 		    	}).catch(err => {
 		    		let { errors } = err.response.data;

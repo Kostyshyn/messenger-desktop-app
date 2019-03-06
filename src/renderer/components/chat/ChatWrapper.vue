@@ -1,22 +1,21 @@
 <template>
-    <div id="main-frame">
-        <TopNavigation />
-
-        <transition name="page" mode="out-in">
-            <router-view></router-view>
-        </transition>
+    <div id="chat-wrapper">
+        <Chat />
+        <Sidebar />
     </div>
 </template>
 
 <script>
 
 import { mapState } from 'vuex';
-import TopNavigation from './navigation/TopNavigation.vue';
+import Chat from './Chat.vue';
+import Sidebar from './Sidebar.vue';
 
 export default {
-    name: 'MainFrame',
+    name: 'ChatWrapper',
     components: { 
-        TopNavigation
+        Chat,
+        Sidebar
     },
     computed: {
         localComputed(){ /* ... */ },
@@ -34,6 +33,10 @@ export default {
 </script>
 
 <style>
-
+    
+    #chat-wrapper {
+        width: 100%;
+        height: calc(100vh - 58px);
+    }
 
 </style>
