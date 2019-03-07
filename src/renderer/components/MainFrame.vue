@@ -2,35 +2,36 @@
     <div id="main-frame">
         <TopNavigation />
 
-        <transition name="page" mode="out-in">
+        <!-- <transition name="page" mode="out-in"> -->
             <router-view></router-view>
-        </transition>
+        <!-- </transition> -->
     </div>
 </template>
 
 <script>
 
-import { mapState } from 'vuex';
-import TopNavigation from './navigation/TopNavigation.vue';
+    import { mapState } from 'vuex';
+    import TopNavigation from './navigation/TopNavigation.vue';
 
-export default {
-    name: 'MainFrame',
-    components: { 
-        TopNavigation
-    },
-    computed: {
-        localComputed(){ /* ... */ },
-        ...mapState({
-            
-        })
-    },
-    methods: {
+    export default {
+        name: 'MainFrame',
+        components: { 
+            TopNavigation
+        },
+        computed: {
+            localComputed(){ /* ... */ },
+            ...mapState({
+                
+            })
+        },
+        methods: {
 
-    },
-    created(){
+        },
+        created(){
 
+        }
     }
-}
+    
 </script>
 
 <style>

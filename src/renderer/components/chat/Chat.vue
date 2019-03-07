@@ -6,26 +6,31 @@
 
 <script>
 
-import { mapState } from 'vuex';
+    import { mapState } from 'vuex';
 
-export default {
-    name: 'Chat',
-    components: {  },
-    computed: {
-        localComputed(){ /* ... */ },
-        ...mapState({
-            
-        })
-    },
-    methods: {
+    export default {
+        name: 'Chat',
+        components: {  },
+        computed: {
+            localComputed(){ /* ... */ },
+            ...mapState({
+                
+            })
+        },
+        methods: {
 
-    },
-    created(){
+        },
+        created(){
 
+        }
     }
-}
+    
 </script>
 
-<style>
+<style lang="scss">
+
+    #chat {
+        padding: 15px;
+    }
 
 </style>

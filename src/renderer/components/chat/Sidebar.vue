@@ -1,31 +1,37 @@
 <template>
     <div id="sidebar-wrapper">
-       <h1 class="heading h-1">Sidebar</h1>
+       <div class="search-bar">
+           <input type="text" class="input" placeholder="Search">
+       </div>
     </div>
 </template>
 
 <script>
 
-import { mapState } from 'vuex';
+    import { mapState } from 'vuex';
 
-export default {
-    name: 'Chat',
-    components: {  },
-    computed: {
-        localComputed(){ /* ... */ },
-        ...mapState({
-            
-        })
-    },
-    methods: {
+    export default {
+        name: 'Chat',
+        components: {  },
+        computed: {
+            localComputed(){ /* ... */ },
+            ...mapState({
+                
+            })
+        },
+        methods: {
 
-    },
-    created(){
+        },
+        created(){
 
+        }
     }
-}
+    
 </script>
 
-<style>
-
+<style lang="scss">
+    .search-bar {
+        padding: 15px;
+        // border-bottom: 1px solid gainsboro;
+    }
 </style>

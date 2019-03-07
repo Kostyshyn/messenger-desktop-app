@@ -4,4 +4,23 @@
 	box-shadow: $primary-shadow;
 	color: $white-font-color;
 	font-weight: bold;
+	position: relative;
+    z-index: 9999;
+    padding: 0px 15px;
+
+    justify-content: space-between;
+    .user-info {
+		display: flex;
+		align-items: center;
+		height: 58px;
+
+		.user-name {
+			padding-left: 10px;
+		}
+
+    }
+    .logout {
+		display: flex;
+		align-items: center;
+    }
 }
