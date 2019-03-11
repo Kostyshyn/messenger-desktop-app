@@ -8,8 +8,8 @@
 <script>
 
     import { mapState } from 'vuex';
-    import Chat from './Chat.vue';
-    import Sidebar from './Sidebar.vue';
+    import Chat from './chat/Chat.vue';
+    import Sidebar from './sidebar/Sidebar.vue';
 
     export default {
         name: 'ChatWrapper',

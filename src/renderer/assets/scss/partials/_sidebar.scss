@@ -4,4 +4,41 @@
     box-sizing: border-box;
     border-right: 1px solid $grey-color;
     background-color: #fff;
+
+	.search-input {
+		padding: 15px;
+		display: flex;
+		.icon-search {
+			height: 34px;
+			width: 40px;
+			line-height: 36px;
+			border: 1px solid $light-grey-color;
+			border-right: none;
+			background-color: $light-grey-color;
+			display: inline-block;
+			border-top-left-radius: 2px;
+			border-bottom-left-radius: 2px;
+			box-sizing: border-box;
+			transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+			text-align: center;
+			&.active {
+				outline: none;
+				background-color: transparent;
+				border: 1px solid $grey-color;
+				border-right: none;
+			}
+			svg {
+				path {
+					fill: $dark-grey-color;
+				}
+			}
+		}
+		.input {
+			padding-left: 0px;
+			border-left: none;
+			border-top-left-radius: 0px;
+			border-bottom-left-radius: 0px;
+		}
+	}
 }
+

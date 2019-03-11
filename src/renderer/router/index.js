@@ -33,7 +33,7 @@ export default new Router({
         {
             path: '/chat',
             name: 'ChatWrapper',
-            component: require('@/components/chat/ChatWrapper').default
+            component: require('@/components/chat_wrapper/ChatWrapper').default
         },
         {
             path: '*',

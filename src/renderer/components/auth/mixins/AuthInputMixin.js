@@ -17,7 +17,7 @@ export default {
 	},
 	methods: {
 		updateValue(val){
-			this.$emit('input', val);
+			this.$emit('input', val.trim());
 		}
 	}
 };
