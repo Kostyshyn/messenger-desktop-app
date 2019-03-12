@@ -1,33 +1,53 @@
 <template>
     <div id="sidebar-wrapper">
         <SearchInput v-model.lazy="searchValue" :searching="searching"/>
-
-        <div v-for="chat in filteredChats">{{ chat.name }}</div>
+        <ChatsList :chats="filteredChats"/>
     </div>
 </template>
 
 <script>
 
     import { mapState, mapActions } from 'vuex';
-    import SearchInput from './partials/SearchInput.vue';
     import debounce from '@utils/debounce.js';
+    import SearchInput from './partials/SearchInput.vue';
+    import ChatsList from './partials/ChatsList.vue';
 
     export default {
         name: 'Sidebar',
         components: { 
-            SearchInput
+            SearchInput,
+            ChatsList
         },
         data(){
             return {
-                searchValue: null,
-                filteredChats: []
+                searchValue: '',
+                localChats: [
+                    {
+                        id: 1,
+                        img: 'https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg',
+                        name: 'root1',
+                        last_msg: 'Hello world',
+                        unread_msg: 3,
+                        date: '12:33, 12.03'
+                    },
+                    {
+                        id: 2,
+                        img: 'https://www.uic.mx/posgrados/files/2018/05/default-user.png',
+                        name: 'user23',
+                        last_msg: 'Some text sample',
+                        unread_msg: 0,
+                        date: '12:13, 12.03'
+                    }
+                ]
             }
         },
         computed: {
-            localComputed(){ /* ... */ },
+            filteredChats(){
+                return this.localChats.filter(chat => chat.name.toLowerCase().includes(this.searchValue.toLowerCase()));
+            },
             ...mapState({
                 searching: state => state.App.searching,
-                localChats: state => state.App.chats          
+                // localChats: state => state.App.chats          
             })
         },
         methods: {
@@ -36,7 +56,7 @@
                 this['SEARCH'](val).then(res => {
                     console.log(res);
                 });
-            }, 300),
+            }, 200),
         },
         watch: {
             searchValue(newValue, oldValue){
