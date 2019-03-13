@@ -22,5 +22,8 @@ export default {
     		// });
     		
     	});
+    },
+    ['SET_ACTIVE_CHAT']({ state, commit, dispatch }, id){
+        commit('SET_ACTIVE_CHAT', id);
     }
 };

@@ -1,6 +1,6 @@
 <template>
     <div id="chat">
-       <h1 class="heading h-1">Chat</h1>
+       <h1 class="heading h-1">Chat {{ activeChat }}</h1>
     </div>
 </template>
 
@@ -14,11 +14,16 @@
         computed: {
             localComputed(){ /* ... */ },
             ...mapState({
-                
+                activeChat: state => state.App.activeChat,  
             })
         },
         methods: {
 
+        },
+        watch: {
+            activeChat(newId, oldId){
+                
+            }
         },
         created(){
 

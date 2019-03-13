@@ -4,6 +4,7 @@ import getters from './getters.js';
 
 const state = {
 	searching: false,
+	activeChat: null,
 	chats: []
 };
 
