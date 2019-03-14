@@ -10,16 +10,21 @@
 		<input 
 			class="input" 
 			type="text" 
-			@input="updateValue($event.target.value)"
 			@focus="focus = true"
 			@blur="focus = false"
+			v-model="value"
 			placeholder=""
 		/>
+		<span class="icon-clear" :class="{ 'active': focus, 'filled': searchString.length }" @click="clear">
+			<FontAwesomeIcon icon="times"/>
+		</span>
 	</div>
 
 </template>
 
 <script>
+
+	import { mapState, mapActions } from 'vuex';
 
 	export default {
 		name: 'SearchInput',
@@ -34,10 +39,23 @@
 				focus: false
 			}
 		},
-		computed: {  },
+		computed: {
+            ...mapState({
+                searchString: state => state.App.searchString    
+            }),
+            value: {
+            	get(){
+            		return this.searchString;
+            	},
+            	set(val){
+            		this['SET_SEARCH_STRING'](val.trim());
+            	}
+            }
+		},
 		methods: {
-			updateValue(val){
-				this.$emit('input', val.trim());
+            ...mapActions('App', ['SET_SEARCH_STRING']),
+			clear(){
+				this.searchString.length ? this['SET_SEARCH_STRING']('') : true;
 			}
 		}
 	}

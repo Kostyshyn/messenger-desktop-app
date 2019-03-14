@@ -1,8 +1,6 @@
 <template>
     <div id="chats-list">
-
         <ChatPreview v-for="chat in chats" :chat="chat" :key="chat.id" :active="chat.id == activeChat"/>
-
     </div>
 </template>
 

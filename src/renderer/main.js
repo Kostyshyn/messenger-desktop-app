@@ -8,9 +8,9 @@ import './store';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faSpinner, faTimes, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faSearch, faSpinner)
+library.add(faSearch, faSpinner, faTimes, faSignOutAlt);
 
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 

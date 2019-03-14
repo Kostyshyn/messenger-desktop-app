@@ -1,6 +1,8 @@
 <template>
     <div id="chat">
-       <h1 class="heading h-1">Chat {{ activeChat }}</h1>
+        <transition name="fade" mode="out-in">
+            <h1 class="heading h-1" v-if="activeChat" >Chat {{ activeChat }}</h1>
+        </transition>
     </div>
 </template>
 
@@ -22,7 +24,7 @@
         },
         watch: {
             activeChat(newId, oldId){
-                
+
             }
         },
         created(){

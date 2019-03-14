@@ -3,6 +3,7 @@ import mutations from './mutations.js';
 import getters from './getters.js';
 
 const state = {
+	searchString: '',
 	searching: false,
 	activeChat: null,
 	chats: []

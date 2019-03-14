@@ -6,7 +6,7 @@
             <div class="chat-preview-name">{{ chat.name }}</div>
             <div class="chat-preview-last-message">{{ chat.last_msg }}</div>
         </div>
-        <div class="chat-preview-notification" v-show="chat.unread_msg > 0">{{ chat.unread_msg }}</div>
+        <div class="chat-preview-notification" v-show="chat.unread_msg > 0">{{ unreadMsg }}</div>
         
     </div>
 </template>
@@ -36,7 +36,16 @@
             }
         },
         computed: {
-            localComputed(){ /* ... */ },
+            unreadMsg(){
+                let num = this.chat.unread_msg;
+                if (num > 999999){
+                    return `${ ( num / 1000000).toFixed() }m`;
+                } else if(num > 9999){
+                    return `${ ( num / 1000).toFixed() }k`;
+                } else {
+                    return num;
+                };
+            },
             ...mapState({
 
             })
@@ -71,6 +80,7 @@
             min-width: 46px;
         }
         .chat-preview-body {
+            width: calc(100% - 103px);
             flex-grow: 1;
             flex-basis: 0;  
             .chat-preview-name {
@@ -81,10 +91,15 @@
                 font-size: 14px;
                 color: rgb(145,145,145);
                 height: 21px;
+                // overflow: hidden;
+                text-overflow: ellipsis;
                 overflow: hidden;
+                white-space: nowrap;
+                // -webkit-line-clamp: 1;
             }
         }
         .chat-preview-notification {
+            flex: 0 0 auto;
             background-color: rgb(255,82,82);
             color: #fff;
             min-width: 10px;
@@ -97,7 +112,7 @@
             margin-left: auto;
             border-radius: 10px;
             padding: 0px 5px;
-
+            margin-left: 10px;
         }
         &:hover {
             background-color: rgb(238,238,238);
