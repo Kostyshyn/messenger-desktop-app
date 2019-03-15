@@ -1,20 +1,26 @@
 <template>
-    <div id="chat">
-        <transition name="fade" mode="out-in">
-            <h1 class="heading h-1" v-if="activeChat" >Chat {{ activeChat }}</h1>
-        </transition>
+    <div id="chat" v-if="activeChat">
+        <ChatHeader /> 
+        <ChatHistory />    
+        <ChatForm />
     </div>
 </template>
 
 <script>
 
     import { mapState } from 'vuex';
+    import ChatHeader from './partials/ChatHeader.vue';
+    import ChatHistory from './partials/ChatHistory.vue';
+    import ChatForm from './partials/ChatForm.vue';
 
     export default {
         name: 'Chat',
-        components: {  },
+        components: { 
+            ChatHeader,
+            ChatHistory,
+            ChatForm
+        },
         computed: {
-            localComputed(){ /* ... */ },
             ...mapState({
                 activeChat: state => state.App.activeChat,  
             })
@@ -37,7 +43,7 @@
 <style lang="scss">
 
     #chat {
-        padding: 15px;
+        
     }
 
 </style>

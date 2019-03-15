@@ -53,7 +53,7 @@
         methods: {
             ...mapActions('App', ['SET_ACTIVE_CHAT']),
             setActive(){
-                this['SET_ACTIVE_CHAT'](this.chat.id);
+                this['SET_ACTIVE_CHAT'](this.chat);
             }
         },
         watch: {
@@ -84,18 +84,15 @@
             flex-grow: 1;
             flex-basis: 0;  
             .chat-preview-name {
-                // height: 20px;
-                // line-height: 20px;
+                
             }
             .chat-preview-last-message {
                 font-size: 14px;
                 color: rgb(145,145,145);
                 height: 21px;
-                // overflow: hidden;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
-                // -webkit-line-clamp: 1;
             }
         }
         .chat-preview-notification {
