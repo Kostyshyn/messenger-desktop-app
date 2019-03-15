@@ -4,7 +4,7 @@
             <img class="user-img" :src="BASE_URL + '/' + user.profile_img" alt="">            
             <span class="user-name">{{ user.username }}</span>
         </div>
-        <div class="logout" v-if="user" @click="LOGOUT">
+        <div class="logout ripple" v-if="user" @click="LOGOUT">
             <FontAwesomeIcon icon="sign-out-alt"/>
         </div>
     </div>
