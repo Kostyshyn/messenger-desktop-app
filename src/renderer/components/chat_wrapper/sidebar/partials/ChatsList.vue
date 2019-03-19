@@ -1,6 +1,6 @@
 <template>
     <div id="chats-list">
-        <ChatPreview v-for="chat in chats" :chat="chat" :key="chat.id" :active="chat.id == activeChat"/>
+        <ChatPreview v-for="chat in chats" :chat="chat" :key="chat.id" :active="active == chat.id"/>
     </div>
 </template>
 
@@ -26,7 +26,9 @@
             }
         },
         computed: {
-            localComputed(){ /* ... */ },
+            active(){
+                return this.activeChat ? this.activeChat.id : false;
+            },
             ...mapState({
                 activeChat: state => state.App.activeChat,
             })
